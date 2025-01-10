@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque de produtos HiRO</title>
+    <link rel="stylesheet" href="style_hiro.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <form id="formulario" name="formulario" action="#">
+        <div class="fixador_de_logo">
+            <div class="logo">
+                <img id="logo" src="https://http2.mlstatic.com/storage/mshops-appearance-api/images/55/260067355/logo-2023072616232221300.webp" alt="">
+            </div>
+        </div>
+
+        <div class="contorno">
+            <fieldset>
+                <div class="aros">
+                    <h3>AROS</h3>
+                    <select onchange=" atualizarVisualizacao()" class="select_aros" name="select_aros" id="select_aros" action="#">
+                        <option value="">selecione o aro</option>
+                        <option value="all" id="mostrar_tudo" action="#">mostrar todos</option>
+                        <option value="aro15" id="aro15" action="#">15</option>
+                        <option value="aro16" id="aro16" action="#">16</option>
+                        <option value="aro17" id="aro17" action="#">17</option>
+                        <option value="aro18" id="aro18" action="#">18</option>
+                        <option value="aro19" id="aro19" action="#">19</option>
+                        <option value="aro20" id="aro20" action="#">20</option>
+                        <option value="aro21" id="aro21" action="#">21</option>
+                        <option value="aro22" id="aro22" action="#">22</option>
+                        
+                        </select>
+                </div>
+                <div class="furacao">
+                    <label for="furacao">
+                        <h3>FURAÇÃO</h3>
+                        <select name="select-furacao" id="furacao" action="#">
+                            <option value="all" id="mostrar_tudo" action="#">mostar todas</option>
+                            <option value="3" id="3" action="#">3</option>
+                            <option value="4" id="4" action="#">4</option>
+                            <option value="5" id="5" action="#">5</option>
+                            <option value="6" id="6" action="#">6</option>
+                           
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="fotos">
+                <div class="contorno_fotos">
+
+                    <img width="120px" height="120px" class="aro15" type="button" class="image-button" onclick="openModal('//http2.mlstatic.com/D_NQ_NP_2X_618628-MLU76093290709_042024-F.webp')" src="https://http2.mlstatic.com/D_NQ_NP_2X_618628-MLU76093290709_042024-F.webp"
+                        alt="Germany Corcel Del Rey Pampa">
+
+
+                    <div id="legenda_rodas" class="aro15 fura3 legendas">
+                        <ul>
+                            <li>legenda do primeiro</li>
+                            <li>prata e preto</li>
+                            <li>15"</li>
+                            <li>3"</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!--aqui aacaba uma imagem-->
+
+                <div class="contorno_fotos">
+
+                    <img width="120px" height="120px" class="aro16" src="https://http2.mlstatic.com/D_NQ_NP_2X_618628-MLU76093290709_042024-F.webp" type="button" class="image-button" onclick="openModal('//http2.mlstatic.com/D_NQ_NP_2X_618628-MLU76093290709_042024-F.webp')"
+                        alt="Germany Corcel Del Rey Pampa">
+
+
+                    <div id="legenda_rodas" class="aro16 fura4 legendas">
+                        <ul>
+                            <li>legenda do segundo</li>
+                            <li>prata e preto</li>
+                            <li>16"</li>
+                            <li>4"</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--aqui aacaba uma imagem-->
+
+                <div class="contorno_fotos">
+
+                    <img width="100px " height="100px " class="aro17 " type="button" class="image-button" onclick="openModal ('roda_marcaTal_aro_furacao_cor.jpg')" src="/roda_marcaTal_aro_furacao_cor.jpg" alt="roda nova ">
+
+
+                    <div id="legenda_rodas" class="aro17 fura5 legendas">
+                        <ul>
+                            <li>legenda do terceiro</li>
+                            <li>prata e preto</li>
+                            <li>17"</li>
+                            <li>5"</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--aqui começa outra imagem-->
+
+                <div class="contorno_fotos">
+
+                    <img width="120px" height="120px" class="aro16" src="https://http2.mlstatic.com/D_NQ_NP_2X_618628-MLU76093290709_042024-F.webp" type="button" class="image-button" onclick="openModal('//http2.mlstatic.com/D_NQ_NP_2X_618628-MLU76093290709_042024-F.webp')"
+                        alt="Germany Corcel Del Rey Pampa">
+
+
+                    <div id="legenda_rodas" class="aro16 fura6 legendas">
+                        <ul>
+                            <li>legenda do quarto</li>
+                            <li>prata e preto</li>
+                            <li>16"</li>
+                            <li>6"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+        <!-- Quadro modal para exibir a imagem ampliada -->
+        <div id="image-modal" class="modal">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modal-image" alt="Imagem ampliada">
+
+
+        </div>
+    </form>
+</body>
+
+</html>
