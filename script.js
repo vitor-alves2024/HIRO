@@ -13,43 +13,20 @@ function closeModal() {
     modal.style.display = "none"; // Oculta o modal
 }
 
-// function SelecaoAros() {
-//     const aro = document.getElementById("select_aros").value;
-//     const imagens = document.querySelectorAll('.fotos img');
-//     const legendas = document.querySelectorAll('.legendas');
-
-//     imagens.forEach(imagem => {
-//         if (aro === "all" || imagem.classList.contains(aro)) {
-//             imagem.classList.add("active");
-//         } else {
-//             imagem.classList.remove("active");
-//         }
-//     });
-
-//     legendas.forEach(legenda => {
-//         if (aro === "all" || legenda.classList.contains(aro)) {
-//             legenda.classList.add("active");
-//         } else {
-//             legenda.classList.remove("active");
-//         }
-//     });
-// }
-
-// document.getElementById("select_aros").addEventListener("change", SelecaoAros);
-
-// // Inicializa a exibição correta ao carregar a página
-// // SelecaoAros();
-
-
 function atualizarVisualizacao() {
     const aro = document.getElementById("select_aros").value;
+    const furacao = document.getElementById("furacao").value;
     const imagens = document.querySelectorAll('.fotos img');
     const legendas = document.querySelectorAll('.legendas');
 
+    let encontrouImagem = false;
+
     imagens.forEach(imagem => {
-        if (aro === "all" || imagem.classList.contains(aro)) {
+        if ((aro === "all" || imagem.classList.contains(aro)) &&
+            (furacao === "all" || imagem.classList.contains(furacao))) {
             imagem.classList.add("active");
             imagem.classList.remove("inactive");
+            encontrouImagem = true;
         } else {
             imagem.classList.add("inactive");
             imagem.classList.remove("active");
@@ -57,7 +34,8 @@ function atualizarVisualizacao() {
     });
 
     legendas.forEach(legenda => {
-        if (aro === "all" || legenda.classList.contains(aro)) {
+        if ((aro === "all" || legenda.classList.contains(aro)) &&
+            (furacao === "all" || legenda.classList.contains(furacao))) {
             legenda.classList.add("active");
             legenda.classList.remove("inactive");
         } else {
@@ -65,6 +43,12 @@ function atualizarVisualizacao() {
             legenda.classList.remove("active");
         }
     });
+
+    // if (!encontrouImagem) {
+    //     alert("Não há imagens correspondentes à combinação selecionada.");
+    // }
 }
-document.getElementById("select_aros").addEventListener("change", SelecaoAros);
+
+document.getElementById("select_aros").addEventListener("change", atualizarVisualizacao);
+document.getElementById("furacao").addEventListener("change", atualizarVisualizacao);
 atualizarVisualizacao();
